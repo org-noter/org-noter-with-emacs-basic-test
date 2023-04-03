@@ -1,0 +1,36 @@
+* org-noter-with-emacs-basic-test
+
+A simple setup to test org-noter in a sandbox.
+
+
+* How to test org-noter in a sandbox
+
+In general, I dont want to break my day-to-day emacs instance. I also want to ensure that the changes I make work apart from my "standard" config.
+
+To do this, I spin up a "clean room" version of vanilla emacs and then install minimum number of packages to run org-noter.
+
+
+1. Install [[https://github.com/alphapapa/with-emacs.sh][with-emacs.sh]]
+2. Clone https://github.com/org-noter/org-noter-with-emacs-basic-test
+
+   #+begin_src bash
+     git clone git@github.com:org-noter/org-noter-with-emacs-basic-test.git
+   #+end_src
+
+3. Execute =with-emacs.sh= from your =org-noter-with-emacs-basic-test= directory:
+
+   #+begin_src bash
+     ~/workspace/with-emacs.sh/with-emacs.sh -P -R -d . install-straight.el
+   #+end_src
+
+4. Evaluate the buffer with =M-x eval-buffer=.
+
+
+As a result of this, you'll end up with a completely stand-alone instance of Emacs with all necessary packages installed to run a clean version of org-noter.
+
+You can now run your org-noter tests.
+
+
+* How to reset the sandbox
+
+Remove the =straight= directory and rerun.
