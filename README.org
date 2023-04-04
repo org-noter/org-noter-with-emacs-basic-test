@@ -25,6 +25,9 @@ To do this, I spin up a "clean room" version of vanilla emacs and then install m
 
 4. Evaluate the buffer with =M-x eval-buffer=.
 
+#+DOWNLOADED: screenshot @ 2023-04-03 20:53:19
+[[file:.figs/How_to_test_org-noter_in_a_sandbox/2023-04-03_20-53-19_screenshot.png]]
+
 
 As a result of this, you'll end up with a completely stand-alone instance of Emacs with all necessary packages installed to run a clean version of org-noter.
 
