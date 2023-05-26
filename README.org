@@ -25,10 +25,13 @@ To do this, I spin up a "clean room" version of vanilla emacs and then install m
      unset foo
    #+end_src
 
-4. Evaluate the buffer with =M-x eval-buffer=.
+4. Edit the path to the development clone of org-noter (at cursor point)
+#+DOWNLOADED: screenshot @ 2023-05-25 22:37:26
+[[file:.figs/How_to_test_org-noter_in_a_sandbox/2023-05-25_22-37-26_screenshot.png]]
 
-#+DOWNLOADED: screenshot @ 2023-04-03 20:53:19
-[[file:.figs/How_to_test_org-noter_in_a_sandbox/2023-04-03_20-53-19_screenshot.png]]
+
+5. Evaluate this buffer with =M-x eval-buffer=.
+
 
 
 As a result of this, you'll end up with a completely stand-alone instance of Emacs with all necessary packages installed to run a clean version of org-noter.
