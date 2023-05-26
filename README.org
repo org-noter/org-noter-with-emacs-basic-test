@@ -19,8 +19,10 @@ To do this, I spin up a "clean room" version of vanilla emacs and then install m
 
 3. Execute =with-emacs.sh= from your =org-noter-with-emacs-basic-test= directory:
 
-   #+begin_src bash
-     ~/workspace/with-emacs.sh/with-emacs.sh -P -R -d . install-straight.el
+   #+begin_src bash :results none
+     foo=`find ~/ -name with-emacs.sh -type f -perm -u+x`
+     $foo -P -R -d . -- +22:38 install-straight.el
+     unset foo
    #+end_src
 
 4. Evaluate the buffer with =M-x eval-buffer=.
