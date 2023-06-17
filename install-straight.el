@@ -19,6 +19,14 @@
 (use-package pdf-tools
   :config  (pdf-tools-install))
 (use-package org-noter
-  :straight (:type git :local-repo "~/workspace/org-noter" :no-build t :no-install t)
-  :after pdf-tools)
+	     :straight (:type git :local-repo "~/emacs/org-noter"
+			      :no-build t
+			      :no-install t
+			      :branch "feature/org-roam-integration")
+	     :after pdf-tools)
 
+(use-package org-roam)
+(setq org-noter-create-session-from-document-hook
+      '(org-noter--create-session-from-document-file-supporting-org-roam))
+
+(require 'org-noter-org-roam)

@@ -21,7 +21,7 @@ To do this, I spin up a "clean room" version of vanilla emacs and then install m
 
    #+begin_src bash :results none
      foo=`find ~/ -name with-emacs.sh -type f -perm -u+x`
-     $foo -P -R -d . -- +22:38 install-straight.el
+     $foo -P -R -d . -- +22:50 install-straight.el
      unset foo
    #+end_src
 
