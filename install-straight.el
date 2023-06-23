@@ -25,7 +25,19 @@
 			      :branch "feature/org-roam-integration")
 	     :after pdf-tools)
 
-(use-package org-roam)
+
+
+
+;; set this to the root of your org-roam directory
+(setq org-roam-root-path "/tmp/org-roam")
+
+(use-package org-roam
+  :custom
+  (org-roam-directory (file-truename org-roam-root-path))
+  (org-roam-db-location (file-truename (concat org-roam-root-path "/org-roam.db")))
+  :config
+  (org-roam-db-autosync-mode))
+
 (setq org-noter-create-session-from-document-hook
       '(org-noter--create-session-from-document-file-supporting-org-roam))
 
