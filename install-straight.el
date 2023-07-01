@@ -41,4 +41,5 @@
 (setq org-noter-create-session-from-document-hook
       '(org-noter--create-session-from-document-file-supporting-org-roam))
 
-(require 'org-noter-org-roam)
+(require 'org-roam)
+(require 'org-noter)
