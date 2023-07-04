@@ -30,6 +30,7 @@
 
 ;; set this to the root of your org-roam directory
 (setq org-roam-root-path "/tmp/org-roam")
+(setq org-directory "/tmp/org-roam")
 
 (use-package org-roam
   :custom
