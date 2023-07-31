@@ -16,6 +16,10 @@
 
 (straight-use-package '(use-package))
 
+
+(straight-use-package '(org :type built-in))
+
+
 (use-package pdf-tools
   :config  (pdf-tools-install))
 
@@ -24,20 +28,14 @@
 
 
 (use-package org-noter
-  ;;:config
-  ;; set this to the root of your org-roam directory
-  ;;(org-noter-enable-org-roam-integration)
+  :config
+  (org-noter-enable-org-roam-integration)
   :after (org org-roam pdf-tools)
-  :straight (:type git :local-repo "~/workspace/org-noter"
-                   :files ("*.el" "modules/*.el")
-                   :no-build t
-                   :branch "feature/org-roam-integration"
-                   :no-install t)
-  ;; (:repo "org-noter/org-noter"
-  ;;        :host github
-  ;;        :type git
-  ;;        :branch "feature/org-roam-integration"
-  ;;        :files ("*.el" "modules/*.el"))
+  :straight (:repo "org-noter/org-noter"
+         :host github
+         :type git
+         :branch "feature/org-roam-integration"
+         :files ("*.el" "modules/*.el"))
   )
 
 (use-package org-roam
