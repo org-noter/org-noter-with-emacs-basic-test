@@ -18,19 +18,27 @@
 
 (use-package pdf-tools
   :config  (pdf-tools-install))
-(use-package org-noter
-	     :straight (:type git :local-repo "~/emacs/org-noter"
-			      :no-build t
-			      :no-install t
-			      :branch "feature/org-roam-integration")
-	     :after pdf-tools)
 
-
-
-
-;; set this to the root of your org-roam directory
 (setq org-roam-root-path "/tmp/org-roam")
 (setq org-directory "/tmp/org-roam")
+
+
+(use-package org-noter
+  ;;:config
+  ;; set this to the root of your org-roam directory
+  ;;(org-noter-enable-org-roam-integration)
+  :after (org org-roam pdf-tools)
+  :straight (:type git :local-repo "~/workspace/org-noter"
+                   :files ("*.el" "modules/*.el")
+                   :no-build t
+                   :branch "feature/org-roam-integration"
+                   :no-install t)
+  ;; (:repo "org-noter/org-noter"
+  ;;        :host github
+  ;;        :type git
+  ;;        :branch "feature/org-roam-integration"
+  ;;        :files ("*.el" "modules/*.el"))
+  )
 
 (use-package org-roam
   :custom
@@ -38,9 +46,3 @@
   (org-roam-db-location (file-truename (concat org-roam-root-path "/org-roam.db")))
   :config
   (org-roam-db-autosync-mode))
-
-(setq org-noter-create-session-from-document-hook
-      '(org-noter--create-session-from-document-file-supporting-org-roam))
-
-(require 'org-roam)
-(require 'org-noter)
