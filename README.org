@@ -42,3 +42,29 @@ You can now run your org-noter tests.
 * How to reset the sandbox
 
 Remove the =straight= directory and rerun.
+
+
+* Speed test with Moby Dick
+
+  The files ~speed-test.sh~ and ~speed-test.el~ set up an ~emacs -Q~ session
+  with local pdf-tools, org-mode and org-noter installed.
+
+  To use these scripts, have the ~pdf-tools~, ~org-mode~, and ~org-noter~ repos
+  at the same directory depth as this repo.  Check out the commits in each repo
+  that you want to test, then come back here to run ~speed-test.sh~
+
+  - ~speed-test.sh~
+   1. clean and recompile ~pdf-tools~
+   2. clean and recompile ~org-mode~
+   3. start emacs with ~speed-test.el~ as the init file.
+
+  - ~speed-test.el~
+   1. load ~pdf-tools~, ~org-mode~ and ~org-noter~ from the repos
+   2. define the timing macro used in the Moby Dick notes
+   3. add a hook to =kill-emacs= to delete the ~pdf-tools~ loaded in step 1
+   4. start a noter session with Moby Dick.
+
+
+  You can now run the timing test from the title page of Moby Dick.  You may
+  have to navigate to that page first and you may also need to close the
+  *Warnings* buffer.
