@@ -9,7 +9,7 @@
   "Measure the time it takes to evaluate BODY."
   `(let ((time (current-time)))
      ,@body
-     (message "%.2f s; %s; %s" (float-time (time-since time)) (org-version nil t) (version))))
+     (float-time (time-since time))))
 
 (add-hook 'kill-emacs-hook
           (lambda () (package-delete (car (last (assoc 'pdf-tools package-alist))))))
