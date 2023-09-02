@@ -9,7 +9,7 @@
   "Measure the time it takes to evaluate BODY."
   `(let ((time (current-time)))
      ,@body
-     (message "%.06f" (float-time (time-since time)))))
+     (message "%.2f s; %s; %s" (float-time (time-since time)) (org-version nil t) (version))))
 
 (add-hook 'kill-emacs-hook
           (lambda () (package-delete (car (last (assoc 'pdf-tools package-alist))))))
@@ -17,4 +17,3 @@
 (find-file "../org-noter/tests/MobyDick.pdf")
 (org-noter)
 (pdf-view-fit-page-to-window)
-
